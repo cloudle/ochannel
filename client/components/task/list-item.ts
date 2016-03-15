@@ -13,6 +13,6 @@ import {RouterLink} from 'angular2/router';
 })
 
 export class TaskItem {
-  @Input() task;
+  @Input() task:Task;
   @Output() destroy: EventEmitter<any> = new EventEmitter();
 }

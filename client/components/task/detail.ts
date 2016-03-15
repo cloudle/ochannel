@@ -11,7 +11,7 @@ import {Tasks} from 'collections/task';
 })
 
 export class TaskDetails {
-  task: Object;
+  task: Task;
 
   constructor (params: RouteParams) {
     var taskId = params.get('taskId');

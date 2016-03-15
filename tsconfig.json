@@ -1,6 +1,16 @@
 {
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "module": "system",
+    "target": "es5"
+  },
   "files": [
+    "typings/local.d.ts",
     "typings/main.d.ts",
-    "typings/angular2-meteor/angular2-meteor.d.ts"
+    "typings/angular2-meteor/angular2-meteor.d.ts",
+    "typings/ng2-meteor-accounts/ng2-meteor-accounts.d.ts",
+    "typings/ng2-meteor-accounts-ui/ng2-meteor-accounts-ui.d.ts",
+    "client/app.ts",
+    "server/main.ts"
   ]
 }
