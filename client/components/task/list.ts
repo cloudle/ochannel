@@ -8,16 +8,16 @@ import {Tasks} from 'collections/task';
 (<any>window).Tasks = Tasks;
 
 @Component({
-  selector: 'task-item',
+  selector: '[taskList]',
   directives: [InsertTaskForm, TaskItem, AccountsUI],
-  template: `<div>
-    <h1>Hi!</h1>
-    <accounts-ui></accounts-ui>
-    <insert-task-form></insert-task-form>
+  template: `
+    <div class="quick-commands">
+      <div class="insert-task-form" insertTaskForm></div>
+    </div>
     <div *ngFor="#task of tasks">
       <task-list-item [task]="task" (destroy)="destroyTask($event)"></task-list-item>
     </div>
-  </div>`
+  `
 })
 
 export class TaskList {

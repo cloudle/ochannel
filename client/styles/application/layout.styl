@@ -1,0 +1,32 @@
+@import "../variable.import.styl";
+
+.application-wrapper
+  .menu-pane
+    width menu-pane-size; height 100%
+    background-color theme-darker
+    color theme-font-reverse
+    position fixed; top 0; left 0; bottom 0
+
+  .content-wrapper
+    position fixed; top 0; left 0; bottom 0; right 0
+    margin-left menu-pane-size
+
+    .list-pane
+      width list-pane-size
+      border-right solid 1px theme-dash
+
+    .kernel-pane
+      flex 1
+
+.application-wrapper .content-wrapper
+  .quick-commands
+    height quick-commands-size
+    line-height quick-commands-size
+    background-color theme-gray
+    padding 0 5px
+
+  .list-pane .quick-commands
+    padding 0 5px
+
+  .kernel-pane .quick-commands
+    padding 0 5px

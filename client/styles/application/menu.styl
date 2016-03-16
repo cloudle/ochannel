@@ -1,0 +1,33 @@
+@import "../variable.import.styl";
+
+.application-wrapper .menu-pane
+  .user-area
+    background-color theme-dark
+    height quick-commands-size
+    line-height quick-commands-size
+    padding 0 5px 0 25px; color white
+    font-size 16px
+
+  .system-area
+    height 60px; padding 0 5px 0 10px
+
+  .navigation-area
+    flex 1; padding 0 5px 0 10px
+
+    .app-link
+      padding 6px 0; cursor pointer
+      user-select none
+      font-weight lighter
+      transition transform 0.5s cubic-animation
+
+      &:first-child
+        padding-top 22px
+
+      &:before
+        font-size 18px; margin-right 6px
+
+      &:hover, &.router-link-active
+        color white
+
+      &.router-link-active
+        transform translate(8px, 0)

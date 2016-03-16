@@ -6,16 +6,9 @@ import {InjectUser} from 'meteor-accounts';
 import {Tasks} from 'collections/task';
 
 @Component({
-  selector: 'insert-task-form',
+  selector: '[insertTaskForm]',
   template: `<form [ngFormModel]="tasksForm" (submit)="insertTask()">
-    <h1 *ngIf="user">Welcome, {{user.emails[0].address + (tasksForm.valid ? '!' : '')}}</h1>
-    <label>Name</label>
     <input type="text" ngControl="name">
-    <label>Description</label>
-    <input type="text" ngControl="description">
-    <label>Location</label>
-    <input type="text" ngControl="location">
-    <button>Add</button>
   </form>`
 })
 

@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'wings';
+    src: url('/engine/packages/wings-icon/font/wings.eot?79902154');
+    src: url('/engine/packages/wings-icon/font/wings.eot?79902154#iefix') format('embedded-opentype'),
+        /*url('/packages/wings-icon/font/wings.woff?79902154') format('woff'),*/
+        /*url('/packages/wings-icon/font/wings.ttf?79902154') format('truetype'),*/
+    url('/engine/packages/wings-icon/font/wings.svg?79902154#wings') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

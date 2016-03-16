@@ -5,7 +5,7 @@ import {Tasks} from 'collections/task';
 
 @Component({
   selector: 'task-details',
-  template: `<div>
+  template: `<div class="content-wrapper">
     <h1 [innerHtml]="task.name"></h1>
   </div>`
 })

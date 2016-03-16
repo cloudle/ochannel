@@ -1,7 +1,8 @@
 interface Task {
   _id?: string;
-  owner: string;
   name: string;
+  creator: string;
+  owner?: string;
   description?: string;
-  location?: string;
+  comments: Array<string>;
 }
