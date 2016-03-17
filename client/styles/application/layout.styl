@@ -1,10 +1,9 @@
 @import "../variable.import.styl";
 
 .application-wrapper
+  position fixed; top 0; left 0; right 0; bottom 0
   .menu-pane
     width menu-pane-size; height 100%
-    background-color theme-darker
-    color theme-font-reverse
     position fixed; top 0; left 0; bottom 0
 
   .content-wrapper
@@ -22,11 +21,15 @@
   .quick-commands
     height quick-commands-size
     line-height quick-commands-size
-    background-color theme-gray
+    background-color lighten(theme-gray, 6)
+    box-sizing border-box
+    border-bottom solid 1px theme-dash
     padding 0 5px
 
-  .list-pane .quick-commands
-    padding 0 5px
+  .list-pane
+    background-color theme-semi-gray
+    .quick-command
+      background-color theme-gray
 
-  .kernel-pane .quick-commands
-    padding 0 5px
+  .list-content, .kernel-content
+    flex 1

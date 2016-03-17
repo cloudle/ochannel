@@ -2,17 +2,15 @@ import {Component, Input, Output, EventEmitter} from 'angular2/core';
 import {RouterLink} from 'angular2/router';
 
 @Component({
-  selector: 'task-list-item',
+  selector: '[taskListItem]',
   directives: [RouterLink],
-  template: `<div>
-    <div>
-      <a [routerLink]="['/TaskDetails', {taskId: task._id}]" [innerHtml]="task.name"></a>
-      <button (click)="destroy.emit(task)">Remove</button>
-    </div>
-  </div>`
+  template: `
+    <a [routerLink]="['/TaskDetails', {taskId: task._id}]" [innerHtml]="task.name"></a>
+    <button (click)="destroy.emit(task)">Remove</button>
+  `
 })
 
-export class TaskItem {
+export class TaskListItem {
   @Input() task:Task;
   @Output() destroy: EventEmitter<any> = new EventEmitter();
 }

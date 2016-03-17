@@ -1,33 +1,37 @@
 @import "../variable.import.styl";
 
 .application-wrapper .menu-pane
+  background-color theme-dark
+  color theme-font-reverse
   .user-area
-    background-color theme-dark
+    background-color lighten(theme-dark, 5)
     height quick-commands-size
     line-height quick-commands-size
     padding 0 5px 0 25px; color white
     font-size 16px
+    border-bottom solid 1px theme-dark
+    box-sizing border-box
 
   .system-area
     height 60px; padding 0 5px 0 10px
 
   .navigation-area
-    flex 1; padding 0 5px 0 10px
+    flex 1
 
     .app-link
-      padding 6px 0; cursor pointer
+      padding 7px 5px 7px 10px; cursor pointer
       user-select none
       font-weight lighter
-      transition transform 0.5s cubic-animation
 
       &:first-child
         padding-top 22px
 
       &:before
+        transition transform 0.3s cubic-animation
         font-size 18px; margin-right 6px
 
       &:hover, &.router-link-active
         color white
 
-      &.router-link-active
-        transform translate(8px, 0)
+      &.router-link-active:before
+        transform scale(1.2) rotate(360deg)

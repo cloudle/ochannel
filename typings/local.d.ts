@@ -4,3 +4,4 @@
 /// <reference path="local/message.d.ts" />
 /// <reference path="local/post.d.ts" />
 /// <reference path="local/project.d.ts" />
+/// <reference path="local/task.d.ts" />
