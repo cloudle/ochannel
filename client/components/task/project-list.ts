@@ -3,7 +3,7 @@ import {AccountsUI} from "meteor-accounts-ui";
 
 import {InsertTaskForm} from "./insert-task-form";
 import {InsertProjectForm} from "./insert-project-form";
-import {TaskListItem} from "./list-item";
+import {TaskListItem} from "./task-list-item";
 
 import {Tasks} from "../../../collections/task";
 import {Projects} from "../../../collections/project";
@@ -12,7 +12,7 @@ import {Projects} from "../../../collections/project";
 (<any>window).Projects = Projects;
 
 @Component({
-  selector: '[taskManagerList]',
+  selector: '[projectList]',
   directives: [InsertTaskForm, InsertProjectForm, TaskListItem, AccountsUI],
   template: `
     <div class="quick-commands">
@@ -31,21 +31,20 @@ import {Projects} from "../../../collections/project";
     <div class="list-content">
       <div class="list-item project icon-record" *ngFor="#project of projects">{{project.name}}</div>
       <!--<div *ngFor="#task of tasks" taskListItem [task]="task" (destroy)="destroyTask($event)"></div>-->
-      <div class="task-inserter" insertProjectForm></div>
+      <div class="list-inserter" insertProjectForm></div>
     </div>
   `
 })
 
-export class TaskManagerList {
-  public tasks: Mongo.Cursor<Task>;
+export class ProjectList {
+
   public projects: Mongo.Cursor<Project>;
 
   constructor () {
-    this.tasks = Tasks.find();
     this.projects = Projects.find();
   }
 
-  public destroyTask (instance: Task) {
-    Tasks.remove(instance._id);
+  public destroyProject (instance: Task) {
+    Projects.remove(instance._id);
   }
 }

@@ -4,7 +4,6 @@ import {bootstrap} from 'angular2-meteor';
 
 import {ApplicationService} from "../services/application";
 
-import {TaskManagerList} from './task/list';
 import {TaskDetails} from './task/details';
 import {MenuPane} from "./menu/pane";
 import {TaskManager} from "./task/manager";
@@ -21,7 +20,7 @@ import {DiscussionHome} from "./discussion/home";
 })
 
 @RouteConfig([
-  { path: '/', as: 'Home', component: TaskManagerList },
+  { path: '/', as: 'Home', component: TaskManager },
   { path: '/todo', as: 'TaskManager', component: TaskManager },
   { path: '/discussion', as: 'Discussion', component: DiscussionHome },
   { path: '/task/:taskId', as: 'TaskDetails', component: TaskDetails }
