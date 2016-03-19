@@ -1,9 +1,63 @@
 @import "../variable.import.styl";
 
+item-height = 40px
+
 .application-wrapper .content-wrapper .kernel-pane
   .kernel-content
-    font-weight 300; font-size 14px
+    font-weight 300; padding-top 10px
+    .kernel-title
+      font-size 20px
+      padding 10px 0;  margin 0 28px
+      color theme-red
+      &:hover
+        text-decoration-skip ink
 
     .kernel-item
-      user-select none
-      margin 0 9px; padding 8px 5px
+      padding 0 20px
+
+      .item-status
+        width 36px; font-size 22px
+        line-height item-height
+        color gray; cursor pointer
+
+      .item-content
+        flex 1; cursor text; position relative
+        border-bottom dashed 1px theme-light-gray
+        line-height item-height
+
+        input
+          border none; font-size 14px; font-weight 300
+          line-height item-height; width 100%
+
+        .meta
+          position absolute; right 0; top 0
+          display none
+          .command
+            display inline-block; cursor pointer
+            font-size 22px
+
+      &:hover .meta
+        display block
+
+    .kernel-inserter
+      position relative; user-select none
+      margin 0 20px
+
+      .insert-mask
+        &:before { margin-right: 8px; font-size: 18px }
+        color theme-red; cursor pointer
+        padding 0 3px; line-height item-height
+
+        &:hover
+          background-color white
+
+      .insert-status
+        width 36px; font-size 22px; color gray
+        line-height item-height
+
+      .insert-content
+        flex 1; border-bottom solid 1px theme-light-gray
+
+        input
+          border none; font-size 14px; font-weight 300
+          line-height item-height; width 100%

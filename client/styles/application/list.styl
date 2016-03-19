@@ -39,9 +39,20 @@
     padding-top 12px
 
     .list-item
-      user-select none
+      user-select none; position relative
       margin 0 9px; padding 8px 3px 8px 5px
       border-radius 4px; cursor pointer
+
+      .meta
+        position absolute; right 0; top 0
+        display none
+
+        .command
+          display inline-block; cursor pointer
+          font-size 20px; line-height 32px
+
+      &:hover .meta
+        display block
 
       &:hover, &.active
         background-color white

@@ -29,7 +29,12 @@ import {Projects} from "../../../collections/project";
       <div class="tab-menu">Priority</div>
     </div>
     <div class="list-content">
-      <div class="list-item project icon-record" *ngFor="#project of projects">{{project.name}}</div>
+      <div class="list-item project icon-record" *ngFor="#project of projects">
+        <span>{{project.name}}</span>
+        <div class="meta">
+          <div class="command icon-scissors" (click)="destroyProject(project)"></div>
+        </div>
+      </div>
       <!--<div *ngFor="#task of tasks" taskListItem [task]="task" (destroy)="destroyTask($event)"></div>-->
       <div class="list-inserter" insertProjectForm></div>
     </div>

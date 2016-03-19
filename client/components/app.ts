@@ -23,7 +23,7 @@ import {DiscussionHome} from "./discussion/home";
   { path: '/', as: 'Home', component: TaskManager },
   { path: '/todo', as: 'TaskManager', component: TaskManager },
   { path: '/discussion', as: 'Discussion', component: DiscussionHome },
-  { path: '/task/:taskId', as: 'TaskDetails', component: TaskDetails }
+  { path: '/todo/:taskId', as: 'TaskDetails', component: TaskDetails }
 ])
 
 class Application {
