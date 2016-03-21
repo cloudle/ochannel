@@ -1,4 +1,7 @@
 import {Component} from "angular2/core";
+import {RouteParams} from 'angular2/router';
+
+import {Projects} from "../../../collections/project";
 
 import {ProjectList} from "./project-list";
 import {TaskList} from "./task-list";
@@ -14,5 +17,11 @@ import {TaskList} from "./task-list";
 })
 
 export class TaskManager {
+  public project: Project;
 
+  constructor (params: RouteParams) {
+    var projectId = params.get('projectId');
+
+    this.project = Projects.findOne({projectId});
+  }
 }

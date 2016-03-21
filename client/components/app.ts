@@ -14,16 +14,19 @@ import {DiscussionHome} from "./discussion/home";
   directives: [MenuPane, ROUTER_DIRECTIVES],
   providers: [ApplicationService],
   template: `<div class="application-wrapper" (click)="globalClickHandler($event)">
-    <div menu-pane class="menu-pane horizontal flex"></div>
+    <div menuPane class="menu-pane horizontal flex"></div>
     <router-outlet></router-outlet>
   </div>`
 })
 
 @RouteConfig([
   { path: '/', as: 'Home', component: TaskManager },
-  { path: '/todo', as: 'TaskManager', component: TaskManager },
-  { path: '/discussion', as: 'Discussion', component: DiscussionHome },
-  { path: '/todo/:taskId', as: 'TaskDetails', component: TaskDetails }
+  { path: '/todo/inbox', as: 'TaskManagerInbox', component: TaskManager },
+  { path: '/todo/today', as: 'TaskManagerToday', component: TaskManager },
+  { path: '/todo/week', as: 'TaskManagerWeek', component: TaskManager },
+  { path: '/todo/:projectId', as: 'TaskManager', component: TaskManager },
+  { path: '/task/:taskId', as: 'TaskDetails', component: TaskDetails },
+  { path: '/discussion', as: 'Discussion', component: DiscussionHome }
 ])
 
 class Application {

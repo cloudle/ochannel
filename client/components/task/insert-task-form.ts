@@ -1,4 +1,4 @@
-import {Component, EventEmitter} from "angular2/core";
+import {Component, Input, EventEmitter} from "angular2/core";
 import {FormBuilder, ControlGroup, Validators} from "angular2/common";
 import {MeteorComponent} from "angular2-meteor";
 import {InjectUser} from "meteor-accounts";
@@ -26,6 +26,7 @@ import {FocusDirective} from "../../directives/focus";
 
 @InjectUser()
 export class InsertTaskForm extends MeteorComponent {
+  @Input() project: Project;
   public user: Meteor.User;
   public taskForm;
   private insertingFocus = new EventEmitter();
@@ -34,7 +35,6 @@ export class InsertTaskForm extends MeteorComponent {
 
   constructor (public applicationService: ApplicationService) {
     super();
-    console.log(this.user);
     var formBuilder = new FormBuilder();
     this.taskForm = formBuilder.group({
       name: ['', Validators.required]
@@ -50,7 +50,12 @@ export class InsertTaskForm extends MeteorComponent {
   }
 
   public insertTask() {
-    Tasks.insert(this.taskForm.value);
+    var name:string = this.taskForm.value.name,
+      newTask: Task = { name, creator: this.user._id, comments: [] };
+
+    if (this.project) newTask.projectId = this.project._id;
+
+    Tasks.insert(newTask);
     Object.keys(this.taskForm.controls).forEach(key => {
       this.taskForm.controls[key].updateValue('');
     });
